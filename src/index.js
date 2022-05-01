@@ -21,14 +21,23 @@ document.addEventListener("DOMContentLoaded", function () {
     newItem.innerHTML = updatedtaskToDo
     document.getElementById("list").appendChild(newItem)
 
-    
+    const deleteButtons = document.querySelectorAll('.del')
+
+    deleteButtons.forEach(button => {
+      button.addEventListener('click', removeMe);
+    });
+
+    function removeMe() {
+      this.closest('li').remove();
+    }
 
 
 
 
 
 
-  })
+
+  });
 });
 
 
